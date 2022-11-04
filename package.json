@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sdfergus/m3-w2-d1-exercise-macOS/issues"
   },
-  "homepage": "https://github.com/sdfergus/m3-w2-d1-exercise-macOS#readme"
+  "homepage": "https://github.com/sdfergus/m3-w2-d1-exercise-macOS#readme",
+  "dependencies": {
+    "mongodb": "^4.11.0"
+  }
 }
