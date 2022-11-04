@@ -47,9 +47,16 @@ MongoClient.connect( url, {
   //   db.close();
   // } )
 
-  dbo.collection( "customers" ).findOne( {}, function ( err, result ) {
+  // dbo.collection( "customers" ).findOne( {}, function ( err, result ) {
+  //   if ( err ) throw err;
+  //   console.log( result.name );
+  //   db.close();
+  // } )
+
+  var query = { address: "Park Lane 38" };
+  dbo.collection( "customers" ).find( query ).toArray( function ( err, result ) {
     if ( err ) throw err;
-    console.log( result.name );
+    console.log( result );
     db.close();
   } )
 
