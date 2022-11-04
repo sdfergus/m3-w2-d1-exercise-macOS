@@ -60,13 +60,19 @@ MongoClient.connect( url, {
   //   db.close();
   // } )
 
-  var mysort = { name: 1 };
-  dbo.collection( "customers" ).find().sort( mysort ).toArray( function ( err, result ) {
+  // var mysort = { name: 1 };
+  // dbo.collection( "customers" ).find().sort( mysort ).toArray( function ( err, result ) {
+  //   if ( err ) throw err;
+  //   console.log( result );
+  //   db.close();
+  // } )
+
+  var myquery = { address: "Mountain 21" };
+  dbo.collection( "customers" ).deleteOne( myquery, function ( err, obj ) {
     if ( err ) throw err;
-    console.log( result );
+    console.log( "1 document deleted" );
     db.close();
   } )
-
 
 } );
 
