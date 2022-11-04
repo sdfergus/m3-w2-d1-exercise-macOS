@@ -12,11 +12,17 @@ MongoClient.connect( url, {
   // db.close();
 
   var dbo = db.db( "nodemongo" );
-  dbo.createCollection( "customers", function ( err, res ) {
+  // dbo.createCollection( "customers", function ( err, res ) {
+  //   if ( err ) throw err;
+  //   console.log( "Collection created!" );
+  //   db.close();
+  // } );
+  var custData = { name: "Westcliff Inc", address: "Irvine, CA" };
+  dbo.collection( "customers" ).insertOne( custData, function ( err, res ) {
     if ( err ) throw err;
-    console.log( "Collection created!" );
+    console.log( "1 document inserted" );
     db.close();
-  } );
+  } )
 
 } );
 
