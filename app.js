@@ -53,12 +53,20 @@ MongoClient.connect( url, {
   //   db.close();
   // } )
 
-  var query = { address: "Park Lane 38" };
-  dbo.collection( "customers" ).find( query ).toArray( function ( err, result ) {
+  // var query = { address: "Park Lane 38" };
+  // dbo.collection( "customers" ).find( query ).toArray( function ( err, result ) {
+  //   if ( err ) throw err;
+  //   console.log( result );
+  //   db.close();
+  // } )
+
+  var mysort = { name: 1 };
+  dbo.collection( "customers" ).find().sort( mysort ).toArray( function ( err, result ) {
     if ( err ) throw err;
     console.log( result );
     db.close();
   } )
+
 
 } );
 
