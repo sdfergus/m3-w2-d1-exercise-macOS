@@ -67,10 +67,18 @@ MongoClient.connect( url, {
   //   db.close();
   // } )
 
-  var myquery = { address: "Mountain 21" };
-  dbo.collection( "customers" ).deleteOne( myquery, function ( err, obj ) {
+  // var myquery = { address: "Mountain 21" };
+  // dbo.collection( "customers" ).deleteOne( myquery, function ( err, obj ) {
+  //   if ( err ) throw err;
+  //   console.log( "1 document deleted" );
+  //   db.close();
+  // } )
+
+  var myquery = { address: "Valley 345" };
+  var newvalues = { $set: { name: "Mickey", address: "Canyon 123" } };
+  dbo.collection( "customers" ).updateOne( myquery, newvalues, function ( err, res ) {
     if ( err ) throw err;
-    console.log( "1 document deleted" );
+    console.log( "1 document updated" );
     db.close();
   } )
 
